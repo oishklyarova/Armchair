@@ -1,0 +1,86 @@
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+header{
+    padding:0px 0px 80px 0px;
+    /*position: relative;*/
+}
+
+/*h2 {
+  position: absolute;
+  top: 40%;
+  right: 18%;
+  text-align: right;
+}*/
+
+.navbar-inverse {
+     background: #E3E3E3;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #7A7A7A;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #3B3B3B;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #3B3B3B;
+    background: #D4D6D6;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #7A7A7A;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  background: #D4D6D6;
+}
+.row-content {
+    margin-bottom: 50px;
+    /*text-align: center;*/
+}
+
+.centered {
+    text-align: center;
+}
+
+.carousel {
+  padding: 0px 70px;
+}
+.carousel-control.left {margin-left: -45px; color: black; width: 50px}
+.carousel-control.right {margin-right: -45px; color: black; width: 50px}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+.carousel-caption {
+    background: rgba(0,0,0,0.2);
+}
+li > .carousel-caption {
+    background: rgba(0,0,0,0.4);
+}
+.badge {
+  font-size: 17px;
+}
+.label-danger {
+  font-size: 28px;
+}
+#more {
+  /*margin-left: 47%;*/
+  padding: 10px 60px;
+}
+.row-footer {
+  margin: 0px auto;
+  padding-left: 0px;
+  padding-top: 10px;
+  background-color: #AfAfAf;
+}
+ul {
+    list-style-type: none;
+}
