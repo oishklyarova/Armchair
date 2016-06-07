@@ -1,24 +1,24 @@
 'use strict';
 
-$('.carousel').carousel({
-    interval: false
-});
+//$('.carousel').carousel({
+//    interval: false
+//});
 
-var i;
+//var i;
 
-$('.carousel-control').on("mouseover", function () {
-    var control = $(this),
-        interval = 2500;
+//$('.carousel-control').on("mouseover", function () {
+//    var control = $(this),
+//        interval = 2500;
 
-    i = setInterval(function () {
-        control.trigger("click");
-    }, interval);
-})
-.on("mouseout", function () {
-    clearInterval(i);
-});
+//    i = setInterval(function () {
+//        control.trigger("click");
+//    }, interval);
+//})
+//.on("mouseout", function () {
+//    clearInterval(i);
+//});
 
-angular.module('armchairApp',['ui.router'])
+angular.module('armchairApp',['ui.router','ngResource','LocalStorageModule','ngRoute'])
   .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
                     // route for the home page
@@ -65,10 +65,52 @@ angular.module('armchairApp',['ui.router'])
                 views: {
                     'content@': {
                         templateUrl : 'views/liked.html',
-                        controller  : 'LikedController'
+                        // controller  : 'LikedController'
                     }
                 }
             })
+
             // $urlRouterProvider.otherwise('/');
-    })
+            $urlRouterProvider.when('', '/');
+
+  })
+
+  .run(['$state', function ($state) {
+    $state.transitionTo('app');
+  }])
+
+  .run(function($rootScope) {
+    $rootScope.$on("$stateChangeError", console.log.bind(console));
+  })
+
+  .config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+  })
+
+  .run(['authService', function (authService) {
+    authService.fillAuthData();
+  }])
+  // .directive('jsCarousel', function () {
+  //     return {
+  //         link: function($scope, element, attrs) {
+  //             $('.carousel').carousel({
+  //                 interval: false
+  //             });
+  //
+  //             //var i;
+  //
+  //             //$('.carousel-control').on("mouseover", function () {
+  //             //    var control = $(this),
+  //             //        interval = 2500;
+  //
+  //             //    i = setInterval(function () {
+  //             //        control.trigger("click");
+  //             //    }, interval);
+  //             //})
+  //             //.on("mouseout", function () {
+  //             //    clearInterval(i);
+  //             //});
+  //         }
+  //     }
+  // })
 ;

@@ -25,6 +25,7 @@ header{
 
 .navbar-inverse .navbar-nav > li > a:hover {
     color: #3B3B3B;
+    cursor: pointer;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -54,8 +55,8 @@ header{
 .carousel {
   padding: 0px 70px;
 }
-.carousel-control.left {margin-left: -45px; color: black; width: 50px}
-.carousel-control.right {margin-right: -45px; color: black; width: 50px}
+.carousel-control.left {margin-left: -5px; color: black; width: 50px}
+.carousel-control.right {margin-right: -5px; color: black; width: 50px}
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
@@ -69,7 +70,7 @@ li > .carousel-caption {
   font-size: 17px;
 }
 .label-danger {
-  font-size: 28px;
+  font-size: 24px;
 }
 #more {
   /*margin-left: 47%;*/

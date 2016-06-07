@@ -1,2 +1,2 @@
 # Armchair
-Learning project: a small website, where people can watch a list of furniture and order the liked one.
+Learning project: a small website, where people can look through the list of furniture, pick the favourite one and give a feedback to the seller...

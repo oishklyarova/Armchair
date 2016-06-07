@@ -19,18 +19,33 @@
 <body>-->
 
   <div class="container" ng-controller='FurnController'>
-      <div ng-repeat="furn in furns.data track by $index">
+      <div ng-if="furns" ng-repeat="furn in furns track by $index">
         <three-carousels entity="furn"></three-carousels>
-        <div ng-if="$index === 0" class="row row-content">
-          <div class="col-xs-12">
-            <p class="label label-danger">При покупке дивана и кресла вы можете расчитывать на 15% скидку, до конца месяца</p>
+        <div ng-if="$index % 2 == 0" class="row row-content">
+          <div class="col-xs-12 centered">
+            <p class="label label-danger">{{promotions[$index/2].description}}</p>
           </div>
         </div>
       </div>
       <div class="row row-content centered">
-        <div class="col-xs-11 col-xs-offset-1">
-          <button id="more" type="button" class="btn btn-primary btn-lg">Еще</button>
+        <div class="col-xs-10 col-xs-offset-1">
+          <button id="more" ng-click="loadMore()" type="button" class="btn btn-primary btn-lg">Еще &raquo;</button>
         </div>
+      </div>
+  </div>
+
+  <div id="warnModal" my-modal class="modal fade">
+      <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" ng-click="close()">&times;</button>
+                  <h4 class="modal-title">Уведомление </h4>
+              </div>
+              <div class="modal-body">
+                  <p>Вам необходимо войти на сайт, чтобы отмечать понравившуюся мебель.</p>
+              </div>
+          </div>
       </div>
   </div>
 
